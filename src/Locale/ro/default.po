@@ -1,0 +1,3 @@
+msgid "Read More"
+msgstr "Citeste mai mult"
+
