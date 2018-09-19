@@ -18,6 +18,12 @@
  */
 require __DIR__ . '/paths.php';
 
+define('SITE_URL','http://192.168.5.116/webappdevelopment/');
+define('ADMIN_URL',SITE_URL.'admin/');
+define('FORGOTPASSWORD',14);
+
+define('FORGOTPASSWORDCHANGED',15);
+define('SUBSCRIPATION',16);
 /*
  * Bootstrap CakePHP.
  *
@@ -71,6 +77,8 @@ try {
 } catch (\Exception $e) {
     exit($e->getMessage() . "\n");
 }
+
+
 
 /*
  * Load an environment local configuration file.
@@ -197,3 +205,22 @@ Type::build('timestamp')
 //Inflector::rules('irregular', ['red' => 'redlings']);
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
+
+/*
+ * Plugins need to be loaded manually, you can either load them one by one or all of them in a single call
+ * Uncomment one of the lines below, as you need. make sure you read the documentation on Plugin to use more
+ * advanced ways of loading plugins
+ *
+ * Plugin::loadAll(); // Loads all plugins at once
+ * Plugin::load('Migrations'); //Loads a single plugin named Migrations
+ *
+ */
+
+/*
+ * Only try to load DebugKit in development mode
+ * Debug Kit should not be installed on a production system
+ */
+error_reporting(0);
+if (Configure::read('debug')) {
+    Plugin::load('DebugKit', ['bootstrap' => true]);
+}
