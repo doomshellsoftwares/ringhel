@@ -18,7 +18,7 @@
  */
 require __DIR__ . '/paths.php';
 
-define('SITE_URL','http://192.168.5.116/webappdevelopment/');
+define('SITE_URL','https://ringhel.azurewebsites.net/');
 define('ADMIN_URL',SITE_URL.'admin/');
 define('FORGOTPASSWORD',14);
 
